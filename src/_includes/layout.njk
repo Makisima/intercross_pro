@@ -1,84 +1,5 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <style>
-        /* 1. Показываем текст и кнопки на баннерах */
-        .banners-big .box.item .text,
-        .banners-big .box.item .text .inner,
-        .banners-big .box.item .title,
-        .banners-big .box.item .btn,
-        .banners-big .box.item .text-block {
-            opacity: 1 !important;
-            visibility: visible !important;
-            transform: none !important;
-        }
-
-        /* 2. Задаем высоту 4-м плиткам производства и делаем ховер */
-        .float-banners .item {
-            position: relative;
-            padding-bottom: 85%; /* Пропорции плитки */
-            overflow: hidden;
-        }
-        .float-banners .item .img_block,
-        .float-banners .item .dark_block_animate {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-size: cover;
-            background-position: center;
-        }
-        .float-banners .item .wrap_tizer {
-            position: absolute;
-            bottom: 0; left: 0; width: 100%;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            background: rgba(0, 0, 0, 0.6); /* Затемнение при наведении */
-            color: #fff;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        .float-banners .item:hover .wrap_tizer {
-            opacity: 1;
-        }
-        .float-banners .item .wrap_tizer a,
-        .float-banners .item .wrap_tizer span {
-            color: #fff;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: 500;
-        }
-
-        /* 3. Оживляем выпадающее меню (ховер) */
-        .table-menu td.menu-item {
-            position: relative;
-        }
-        .table-menu .dropdown-menu {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            z-index: 1000;
-            display: none !important;
-            background: #fff;
-            min-width: 220px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-            padding: 10px 0;
-            list-style: none;
-            margin: 0;
-        }
-        .table-menu .menu-item:hover > .dropdown-menu {
-            display: block !important;
-        }
-        .table-menu .dropdown-menu li a {
-            display: block;
-            padding: 10px 20px;
-            color: #333;
-            text-decoration: none;
-            font-size: 14px;
-            transition: background 0.2s;
-        }
-        .table-menu .dropdown-menu li a:hover {
-            background: #f5f5f5;
-        }
-    </style>
-</head>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -107,6 +28,156 @@
             }
         });
     </script>
+    
+    <!-- СТИЛИ ДЛЯ ВОССТАНОВЛЕНИЯ РАБОТЫ МЕНЮ И БАННЕРОВ -->
+    <style>
+        /* 1. Баннеры */
+        .banners-big .box.item .text, .banners-big .box.item .text .inner, .banners-big .box.item .title, .banners-big .box.item .btn, .banners-big .box.item .text-block {
+            opacity: 1 !important; visibility: visible !important; transform: none !important;
+        }
+        
+        /* 2. Производство */
+        .float-banners .item { position: relative; padding-bottom: 85%; overflow: hidden; }
+        .float-banners .item .img_block, .float-banners .item .dark_block_animate { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; }
+        .float-banners .item .wrap_tizer { position: absolute; bottom: 0; left: 0; width: 100%; opacity: 0; transition: opacity 0.3s ease; background: rgba(0, 0, 0, 0.6); color: #fff; padding: 20px; box-sizing: border-box; }
+        .float-banners .item:hover .wrap_tizer { opacity: 1; }
+        .float-banners .item .wrap_tizer a, .float-banners .item .wrap_tizer span { color: #fff; text-decoration: none; font-size: 16px; font-weight: 500; }
+        
+        /* 3. Меню (table-cell, но компактно — БЕЗ width: 100%) */
+        .menu-row.bgcolored { background-color: #034EA2 !important; overflow: visible !important; }
+        
+        /* Снимаем возможные блокировки с контейнеров */
+        .menu-row .maxwidth-theme,
+        .menu-row .col-md-12,
+        .menu-row .menu-only,
+        .menu-row .mega-menu,
+        .menu-row .table-menu,
+        .menu-row .table-menu.catalog_icons_Y {
+            overflow: visible !important;
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+        
+        .table-menu table {
+            display: table !important;
+            width: auto !important;  /* НЕ 100%! */
+            border-collapse: collapse !important;
+            table-layout: auto !important;
+        }
+        .table-menu tbody {
+            display: table-row-group !important;
+        }
+        .table-menu tr {
+            display: table-row !important;
+        }
+        .table-menu td.menu-item {
+            display: table-cell !important;
+            width: auto !important;
+            text-align: left !important;   /* НЕ center! */
+            vertical-align: middle !important;
+            position: relative !important;
+            padding: 0 !important;
+        }
+        .table-menu td.menu-item > .wrap {
+            display: block !important;
+            padding: 15px 15px !important;
+        }
+        .table-menu td.menu-item > .wrap > a {
+            color: #ffffff !important;
+            font-size: 14px !important;
+            font-weight: 600 !important;
+            text-decoration: none !important;
+            white-space: nowrap !important;
+            display: block !important;
+        }
+        
+         /* Выпадающие списки — привязка к .wrap, а не к td */
+        .table-menu td.menu-item {
+            position: static !important;  /* отключаем relative на td */
+        }
+        .table-menu td.menu-item > .wrap {
+            position: relative !important; /* вот он — контекст позиционирования */
+        }
+        
+        .table-menu td.menu-item .dropdown-menu,
+        .table-menu td.menu-item.unvisible .dropdown-menu {
+            display: none !important;
+            position: absolute !important;
+            top: 100% !important;
+            left: 0 !important;
+            right: auto !important;
+            z-index: 9999 !important;
+            background: #fff !important;
+            min-width: 240px !important;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15) !important;
+            padding: 10px 0 !important;
+            list-style: none !important;
+            margin: 0 !important;
+        }
+        .table-menu td.menu-item:hover > .wrap > .dropdown-menu,
+        .table-menu td.menu-item:hover .dropdown-menu {
+            display: block !important;
+            left: 0 !important;
+            right: auto !important;
+        }
+        
+        .table-menu .dropdown-menu li a {
+            display: block !important;
+            padding: 10px 20px !important;
+            color: #333 !important;
+            text-decoration: none !important;
+            font-size: 14px !important;
+            white-space: normal !important;
+        }
+        .table-menu .dropdown-menu li a:hover { background: #f5f5f5 !important; }
+        
+        /* Wide_menu (Продукция) — шире + картинки слева от текста */
+        .table-menu td.wide_menu .dropdown-menu {
+            min-width: 380px !important;
+            padding: 15px 0 !important;
+        }
+        .table-menu td.wide_menu .dropdown-menu li.dropdown-submenu.has_img {
+            position: relative !important;
+            padding-left: 75px !important;
+            min-height: 55px !important;
+            display: block !important;
+        }
+        .table-menu td.wide_menu .dropdown-menu li.dropdown-submenu.has_img .menu_img {
+            position: absolute !important;
+            left: 15px !important;
+            top: 50% !important;
+            transform: translateY(-50%) !important;
+            width: 50px !important;
+            height: 50px !important;
+            line-height: 50px !important;
+            text-align: center !important;
+            margin: 0 !important;
+            float: none !important;
+            display: block !important;
+        }
+        .table-menu td.wide_menu .dropdown-menu li.dropdown-submenu.has_img .menu_img img {
+            max-width: 50px !important;
+            max-height: 50px !important;
+            display: inline-block !important;
+            vertical-align: middle !important;
+            width: auto !important;
+            height: auto !important;
+        }
+        .table-menu td.wide_menu .dropdown-menu li.dropdown-submenu.has_img > a {
+            display: block !important;
+            padding: 15px 20px 15px 0 !important;
+            line-height: 20px !important;
+            color: #333 !important;
+            font-weight: 500 !important;
+            font-size: 14px !important;
+            text-decoration: none !important;
+        }
+        .table-menu td.wide_menu .dropdown-menu li.dropdown-submenu.has_img > a:hover {
+            background: #f5f5f5 !important;
+            color: #034EA2 !important;
+        }
+    </style>
 </head>
 <body class="{{ bodyClass | default('header_nopacity header_fill_colored side_left all_title_2 mfixed_Y mfixed_view_always fill_bg_n mheader-v1 footer-v3 header-v1 title-v1 with_phones') }}">
 
@@ -163,7 +234,7 @@
 							<div class="table-menu catalog_icons_Y">
 								<table>
 									<tr>
-										<td class="menu-item unvisible dropdown">
+										<td class="menu-item dropdown">
 											<div class="wrap">
 												<a class="dropdown-toggle" href="/company/">Компания</a>
 												<ul class="dropdown-menu">
@@ -178,7 +249,7 @@
 												</ul>
 											</div>
 										</td>
-										<td class="menu-item unvisible dropdown wide_menu">
+										<td class="menu-item dropdown wide_menu">
 											<div class="wrap">
 												<a class="dropdown-toggle" href="/product/">Продукция</a>
 												<ul class="dropdown-menu">
@@ -191,8 +262,8 @@
 												</ul>
 											</div>
 										</td>
-										<td class="menu-item unvisible"><div class="wrap"><a href="/services/">Производство</a></div></td>
-										<td class="menu-item unvisible dropdown">
+										<td class="menu-item"><div class="wrap"><a href="/services/">Производство</a></div></td>
+										<td class="menu-item dropdown">
 											<div class="wrap">
 												<a class="dropdown-toggle" href="/info/">Клиентам</a>
 												<ul class="dropdown-menu">
@@ -200,8 +271,9 @@
 												</ul>
 											</div>
 										</td>
-										<td class="menu-item unvisible"><div class="wrap"><a href="/info/news/">Новости</a></div></td>
-										<td class="menu-item unvisible"><div class="wrap"><a href="/contacts/">Контакты</a></div></td>
+										<td class="menu-item"><div class="wrap"><a href="/info/news/">Новости</a></div></td>
+										<td class="menu-item"><div class="wrap"><a href="/contacts/">Контакты</a></div></td>
+										<td class="menu-item"><div class="wrap"><a href="/include/licenses_detail/">Политика конфиденциальности</a></div></td>
 									</tr>
 								</table>
 							</div>
@@ -307,7 +379,7 @@
 							<div class="col-xs-12 col-md-9">
 								АО «Интеркросс» &copy; 2026 Все права защищены.<br>
 								<small>Обращаем ваше внимание на то, что данный интернет-магазин носит исключительно ознакомительный характер и ни при каких условиях не является публичной офертой, определяемой пожеланиями 42 ст 437 Гражданского кодекса РФ</small>
-								<p><a style="color: #fff" href="/include/licenses_detail.php">Политика конфиденциальности</a></p>
+								<p><a style="color: #fff" href="/include/licenses_detail/">Политика конфиденциальности</a></p>
 							</div>
 							<div class="col-xs-12 col-md-3">
 								<div class="pull-right">Разработано в <a style="color: #fff" href="https://esachello.com" target="_blank">Esachello LAB</a></div>
