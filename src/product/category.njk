@@ -4,23 +4,26 @@ pagination:
   data: catalog
   size: 1
   alias: category
-permalink: "/product/{{ category.slug }}/index.html"
+permalink: "/product/{{ category.path }}/index.html"
+eleventyComputed:
+  title: "{{ category.title }} — АО «Интеркросс»"
 ---
 {% set ancestors = catalog | ancestorsOf(category) %}
 {% set children = catalog | childrenOf(category.id) %}
+{% set isProduct = category.kind === "product" %}
 
 <div class="body">
 	<div class="body_media"></div>
 	<div role="main" class="main banner-auto">
 		<div class="container">
 			<div class="maxwidth-theme">
-				
+
 				<div class="breadcrumbs">
 					<ul class="breadcrumb">
 						<li><a href="/">Главная</a></li>
 						<li><a href="/product/">Продукты</a></li>
 						{% for node in ancestors %}
-							<li><a href="/product/{{ node.slug }}/">{{ node.title }}</a></li>
+							<li><a href="/product/{{ node.path }}/">{{ node.title }}</a></li>
 						{% endfor %}
 						<li><span>{{ category.title }}</span></li>
 					</ul>
@@ -36,19 +39,8 @@ permalink: "/product/{{ category.slug }}/index.html"
 								{% for item in catalog %}
 									{% if item.parent_id == null %}
 										{% set isActive = (category.id == item.id) or (ancestors | length and ancestors[0].id == item.id) %}
-										<li class="{% if isActive %}active{% endif %} {% if isActive and children | length %}child{% endif %}">
-											<a href="/product/{{ item.slug }}/">{{ item.title }}</a>
-											{% if isActive and children | length %}
-												<div class="submenu-wrapper">
-													<ul class="submenu">
-														{% for child in children %}
-															<li class="{% if child.id == category.id %}active{% endif %}">
-																<a href="/product/{{ child.slug }}/">{{ child.title }}</a>
-															</li>
-														{% endfor %}
-													</ul>
-												</div>
-											{% endif %}
+										<li class="{% if isActive %}active{% endif %}">
+											<a href="/product/{{ item.path }}/">{{ item.title }}</a>
 										</li>
 									{% endif %}
 								{% endfor %}
@@ -63,35 +55,42 @@ permalink: "/product/{{ category.slug }}/index.html"
 
 					<!-- Контент (справа) -->
 					<div class="col-md-9 col-sm-12 col-xs-12 content-md">
-						
-						{% if category.description %}
-						<div class="text_block" style="margin-top: 20px; margin-bottom: 30px;">
-							<p>{{ category.description }}</p>
-						</div>
-						{% endif %}
 
-						{% if children | length %}
-						<div class="item-views catalog sections">
-							<div class="items row margin0 row_block flexbox nmac">
-								{% for item in children %}
-								<div class="col-md-6 col-sm-12 col-xs-12">
-									<div class="item slice-item left" style="margin-bottom: 30px; border: 1px solid #eee; padding: 15px; border-radius: 4px;">
-										<div class="image" style="text-align: center; min-height: 150px; display: flex; align-items: center; justify-content: center;">
-											<a href="/product/{{ item.slug }}/">
-												<!-- Если картинки нет, используется заглушка Aspro -->
-												<img src="{{ item.image | default('/bitrix/templates/aspro-allcorp2/images/noimage_sections.png') }}" alt="{{ item.title }}" class="img-responsive" style="max-height: 150px; object-fit: contain;" />
-											</a>
-										</div>
-										<div class="info" style="margin-top: 15px; text-align: center;">
-											<div class="title">
-												<a href="/product/{{ item.slug }}/" class="dark-color" style="font-size: 16px; font-weight: 500; line-height: 1.4;">{{ item.title }}</a>
+						{% if isProduct %}
+							{# ===== ТОВАР ===== #}
+							{% if category.specs_html %}
+								<div class="detail product-specs" style="margin-top: 20px;">
+									{{ category.specs_html | safe }}
+								</div>
+							{% else %}
+								<p style="color: #666;">Описание товара находится в стадии наполнения.</p>
+							{% endif %}
+						{% else %}
+							{# ===== КАТЕГОРИЯ ===== #}
+							{% if children | length %}
+								<div class="item-views catalog sections">
+									<div class="items row margin0 row_block flexbox nmac">
+										{% for item in children %}
+										<div class="col-md-6 col-sm-12 col-xs-12">
+											<div class="item slice-item left" style="margin-bottom: 30px; border: 1px solid #eee; padding: 15px; border-radius: 4px;">
+												<div class="image" style="text-align: center; min-height: 150px; display: flex; align-items: center; justify-content: center;">
+													<a href="/product/{{ item.path }}/">
+														<img src="{{ item.image | default('/bitrix/templates/aspro-allcorp2/images/noimage_sections.png') }}" alt="{{ item.title }}" class="img-responsive" style="max-height: 150px; object-fit: contain;" />
+													</a>
+												</div>
+												<div class="info" style="margin-top: 15px; text-align: center;">
+													<div class="title">
+														<a href="/product/{{ item.path }}/" class="dark-color" style="font-size: 16px; font-weight: 500; line-height: 1.4;">{{ item.title }}</a>
+													</div>
+												</div>
 											</div>
 										</div>
+										{% endfor %}
 									</div>
 								</div>
-								{% endfor %}
-							</div>
-						</div>
+							{% else %}
+								<p style="color: #666;">В этой категории пока нет товаров.</p>
+							{% endif %}
 						{% endif %}
 
 						<div class="order_block" style="margin-top: 20px; text-align: center;">
