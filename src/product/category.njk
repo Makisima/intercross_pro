@@ -1,0 +1,65 @@
+---
+layout: layout.njk
+bodyClass: "header_nopacity header_fill_colored side_left all_title_2 mfixed_Y mfixed_view_always fill_bg_n mheader-v1 footer-v3 header-v1 title-v1 with_phones"
+pagination:
+  data: catalog
+  size: 1
+  alias: category
+permalink: "/product/{{ category.slug }}/index.html"
+---
+{% set ancestors = catalog | ancestorsOf(category) %}
+{% set children = catalog | childrenOf(category.id) %}
+
+<div class="wrapper_inner">
+  <div class="middle">
+    <div class="container">
+      <div class="maxwidth-theme">
+
+        <div class="breadcrumbs">
+          <ul class="breadcrumb">
+            <li><a href="/">Главная</a></li>
+            {% for node in ancestors %}
+              <li><a href="/product/{{ node.slug }}/">{{ node.title }}</a></li>
+            {% endfor %}
+            <li><span>{{ category.title }}</span></li>
+          </ul>
+        </div>
+
+        <h1 id="pagetitle">{{ category.title }}</h1>
+
+        {% if category.description %}
+        <div class="text_block">
+          <p>{{ category.description }}</p>
+        </div>
+        {% endif %}
+
+        {% if children | length %}
+        <div class="section-block">
+          <div class="row">
+            {% for item in children %}
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <div class="catalog_item">
+                <a class="item_link" href="/product/{{ item.slug }}/">
+                  {% if item.image %}
+                  <span class="image"><img src="{{ item.image }}" alt="{{ item.title }}"></span>
+                  {% endif %}
+                  <span class="item-title">{{ item.title }}</span>
+                </a>
+                {% if item.description %}
+                <div class="item-description">{{ item.description }}</div>
+                {% endif %}
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
+
+        <div class="order_block">
+          <a href="/contacts/" class="btn btn-default">Заказать</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

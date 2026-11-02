@@ -1,0 +1,241 @@
+[
+  {
+    "id": "1",
+    "slug": "avtodorozhnoe-napravlenie",
+    "title": "Автодорожное направление",
+    "parent_id": null,
+    "direction": "avtodor",
+    "image": "/upload/resize_cache/iblock/eef/120_120_2/r1hcii6sh7a406crh2up1d09q7gop51p.png",
+    "description": "Шкафы управления видеофиксацией, шкафы АСУД, метеостанции и другое оборудование для автомобильных дорог."
+  },
+  {
+    "id": "2",
+    "slug": "shkafy-asud",
+    "title": "Шкафы АСУД",
+    "parent_id": "1",
+    "direction": "avtodor",
+    "image": "/upload/resize_cache/iblock/eef/120_120_2/r1hcii6sh7a406crh2up1d09q7gop51p.png",
+    "description": "Шкафы для автоматизированной системы управления дорожным движением."
+  },
+  {
+    "id": "3",
+    "slug": "shkafy-videofiksatsii",
+    "title": "Шкафы видеофиксации",
+    "parent_id": "1",
+    "direction": "avtodor",
+    "image": "/upload/resize_cache/iblock/eef/120_120_2/r1hcii6sh7a406crh2up1d09q7gop51p.png",
+    "description": "Аппаратные шкафы для комплексов фотовидеофиксации нарушений ПДД."
+  },
+  {
+    "id": "4",
+    "slug": "meteoposty",
+    "title": "Метеопосты",
+    "parent_id": "1",
+    "direction": "avtodor",
+    "image": "/upload/resize_cache/iblock/eef/120_120_2/r1hcii6sh7a406crh2up1d09q7gop51p.png",
+    "description": "Дорожные метеостанции и посты контроля состояния покрытия."
+  },
+
+  {
+    "id": "10",
+    "slug": "neftegazovoe-napravlenie",
+    "title": "Нефтегазовое направление",
+    "parent_id": null,
+    "direction": "neftegaz",
+    "image": "/upload/resize_cache/iblock/ee1/120_120_2/j1n7c0foamovqcmanfy0dgzoeiu8x3jd.png",
+    "description": "Шкафы КИПиА, взрывозащищённые оболочки и оборудование для объектов нефтегазового комплекса."
+  },
+  {
+    "id": "11",
+    "slug": "shkafy-kipia",
+    "title": "Шкафы КИПиА",
+    "parent_id": "10",
+    "direction": "neftegaz",
+    "image": "/upload/resize_cache/iblock/ee1/120_120_2/j1n7c0foamovqcmanfy0dgzoeiu8x3jd.png",
+    "description": "Шкафы контрольно-измерительных приборов и автоматики."
+  },
+  {
+    "id": "12",
+    "slug": "vzryvozashchishchennye-shkafy",
+    "title": "Взрывозащищённые шкафы",
+    "parent_id": "10",
+    "direction": "neftegaz",
+    "image": "/upload/resize_cache/iblock/ee1/120_120_2/j1n7c0foamovqcmanfy0dgzoeiu8x3jd.png",
+    "description": "Оболочки категории Ex для установки во взрывоопасных зонах."
+  },
+
+  {
+    "id": "20",
+    "slug": "gornorudnoe-napravlenie",
+    "title": "Горнорудное направление",
+    "parent_id": null,
+    "direction": "gornorud",
+    "image": "/upload/resize_cache/iblock/ee1/120_120_2/j1n7c0foamovqcmanfy0dgzoeiu8x3jd.png",
+    "description": "Шкафы и посты управления для горнорудных и обогатительных производств."
+  },
+  {
+    "id": "21",
+    "slug": "shkafy-shakhtnogo-ispolneniya",
+    "title": "Шкафы шахтного исполнения",
+    "parent_id": "20",
+    "direction": "gornorud",
+    "image": "/upload/resize_cache/iblock/ee1/120_120_2/j1n7c0foamovqcmanfy0dgzoeiu8x3jd.png",
+    "description": "Шкафы для эксплуатации в подземных выработках."
+  },
+  {
+    "id": "22",
+    "slug": "posty-upravleniya-konveyerami",
+    "title": "Посты управления конвейерами",
+    "parent_id": "20",
+    "direction": "gornorud",
+    "image": "/upload/resize_cache/iblock/ee1/120_120_2/j1n7c0foamovqcmanfy0dgzoeiu8x3jd.png",
+    "description": "Посты и пульты управления ленточными конвейерами."
+  },
+
+  {
+    "id": "30",
+    "slug": "elektrotekhnicheskoe-napravlenie",
+    "title": "Электротехническое направление",
+    "parent_id": null,
+    "direction": "elektrotekh",
+    "image": "/upload/resize_cache/iblock/ee1/120_120_2/j1n7c0foamovqcmanfy0dgzoeiu8x3jd.png",
+    "description": "Щиты, шкафы управления и распределительные устройства."
+  },
+  {
+    "id": "31",
+    "slug": "shkafy-upravleniya",
+    "title": "Шкафы управления",
+    "parent_id": "30",
+    "direction": "elektrotekh",
+    "image": "/upload/resize_cache/iblock/ee1/120_120_2/j1n7c0foamovqcmanfy0dgzoeiu8x3jd.png",
+    "description": "Шкафы управления технологическим оборудованием на базе ПЛК."
+  },
+  {
+    "id": "32",
+    "slug": "shchity-raspredelitelnye",
+    "title": "Щиты распределительные",
+    "parent_id": "30",
+    "direction": "elektrotekh",
+    "image": "/upload/resize_cache/iblock/ee1/120_120_2/j1n7c0foamovqcmanfy0dgzoeiu8x3jd.png",
+    "description": "Вводно-распределительные устройства и щиты собственных нужд."
+  },
+
+  {
+    "id": "40",
+    "slug": "tsod",
+    "title": "Центры обработки данных",
+    "parent_id": null,
+    "direction": "tsod",
+    "image": "/upload/resize_cache/iblock/ee1/120_120_2/j1n7c0foamovqcmanfy0dgzoeiu8x3jd.png",
+    "description": "Стойки, шкафы и климатическое оборудование для ЦОД."
+  },
+  {
+    "id": "41",
+    "slug": "servernye-stoyki",
+    "title": "Серверные стойки",
+    "parent_id": "40",
+    "direction": "tsod",
+    "image": "/upload/resize_cache/iblock/ee1/120_120_2/j1n7c0foamovqcmanfy0dgzoeiu8x3jd.png",
+    "description": "19\" стойки и шкафы для размещения серверного оборудования."
+  },
+  {
+    "id": "42",
+    "slug": "sistemy-konditsionirovaniya",
+    "title": "Системы кондиционирования",
+    "parent_id": "40",
+    "direction": "tsod",
+    "image": "/upload/resize_cache/iblock/ee1/120_120_2/j1n7c0foamovqcmanfy0dgzoeiu8x3jd.png",
+    "description": "Прецизионные кондиционеры и системы охлаждения."
+  },
+
+  {
+    "id": "50",
+    "slug": "telekomunikatsionnoe-napravlenie",
+    "title": "Телекоммуникационное направление",
+    "parent_id": null,
+    "direction": "telecom",
+    "image": "/upload/resize_cache/iblock/ee1/120_120_2/j1n7c0foamovqcmanfy0dgzoeiu8x3jd.png",
+    "description": "Климатические шкафы, оптические коробки, кроссовое оборудование."
+  },
+  {
+    "id": "51",
+    "slug": "krossovoe-oborudovanie",
+    "title": "Кроссовое оборудование",
+    "parent_id": "50",
+    "direction": "telecom",
+    "image": "/upload/resize_cache/iblock/ee1/120_120_2/j1n7c0foamovqcmanfy0dgzoeiu8x3jd.png",
+    "description": "Аналоговый и цифровой кросс."
+  },
+  {
+    "id": "5101",
+    "slug": "kross-opticheskiy-19-1u",
+    "title": "Кросс оптический 19\" 1U",
+    "parent_id": "51",
+    "direction": "telecom",
+    "image": "/upload/resize_cache/iblock/ee1/120_120_2/j1n7c0foamovqcmanfy0dgzoeiu8x3jd.png",
+    "description": "Оптический кросс 19\" 1U на 24 порта SC/FC."
+  },
+  {
+    "id": "5102",
+    "slug": "kross-analogovyy",
+    "title": "Кросс аналоговый",
+    "parent_id": "51",
+    "direction": "telecom",
+    "image": "/upload/resize_cache/iblock/ee1/120_120_2/j1n7c0foamovqcmanfy0dgzoeiu8x3jd.png",
+    "description": "Аналоговый кросс для плинтов типа 66 и 110."
+  },
+  {
+    "id": "5103",
+    "slug": "kross-tsifrovoy",
+    "title": "Кросс цифровой",
+    "parent_id": "51",
+    "direction": "telecom",
+    "image": "/upload/resize_cache/iblock/ee1/120_120_2/j1n7c0foamovqcmanfy0dgzoeiu8x3jd.png",
+    "description": "Цифровой кросс для структурированных кабельных систем."
+  },
+  {
+    "id": "52",
+    "slug": "klimaticheskie-shkafy",
+    "title": "Климатические шкафы",
+    "parent_id": "50",
+    "direction": "telecom",
+    "image": "/upload/resize_cache/iblock/ee1/120_120_2/j1n7c0foamovqcmanfy0dgzoeiu8x3jd.png",
+    "description": "Уличные климатические шкафы для размещения активного оборудования."
+  },
+  {
+    "id": "5201",
+    "slug": "klimaticheskiy-shkaf-20u",
+    "title": "Климатический шкаф 20U",
+    "parent_id": "52",
+    "direction": "telecom",
+    "image": "/upload/resize_cache/iblock/ee1/120_120_2/j1n7c0foamovqcmanfy0dgzoeiu8x3jd.png",
+    "description": "Уличный шкаф 20U с кондиционером и обогревом."
+  },
+  {
+    "id": "5202",
+    "slug": "klimaticheskiy-shkaf-12u",
+    "title": "Климатический шкаф 12U",
+    "parent_id": "52",
+    "direction": "telecom",
+    "image": "/upload/resize_cache/iblock/ee1/120_120_2/j1n7c0foamovqcmanfy0dgzoeiu8x3jd.png",
+    "description": "Уличный шкаф 12U с естественной вентиляцией."
+  },
+  {
+    "id": "53",
+    "slug": "opticheskie-korobki",
+    "title": "Оптические коробки",
+    "parent_id": "50",
+    "direction": "telecom",
+    "image": "/upload/resize_cache/iblock/ee1/120_120_2/j1n7c0foamovqcmanfy0dgzoeiu8x3jd.png",
+    "description": "Муфты и распределительные коробки для ВОЛС."
+  },
+  {
+    "id": "5301",
+    "slug": "korobka-opticheskaya-naruzhnaya",
+    "title": "Коробка оптическая наружная",
+    "parent_id": "53",
+    "direction": "telecom",
+    "image": "/upload/resize_cache/iblock/ee1/120_120_2/j1n7c0foamovqcmanfy0dgzoeiu8x3jd.png",
+    "description": "Наружная распределительная коробка на 16 портов."
+  }
+]

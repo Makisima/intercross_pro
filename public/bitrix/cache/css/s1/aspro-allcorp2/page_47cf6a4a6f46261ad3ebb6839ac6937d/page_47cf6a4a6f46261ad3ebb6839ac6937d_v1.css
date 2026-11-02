@@ -1,0 +1,12 @@
+
+
+/* Start:/bitrix/templates/aspro-allcorp2/components/bitrix/news/catalog/style.min.css?1718269816394*/
+@media (min-width:992px){.body .content-md>.right_block.catalog_page{width:100%}.content-md>.right_block.narrow_Y.catalog_page .section-content-wrapper{width:75%}.content-md>.right_block.narrow_N.catalog_page .section-content-wrapper{width:100%}.right_block.catalog_page .main-catalog-wrapper .left_block{margin-top:0}}@media (max-width:991px){.right_block .main-catalog-wrapper{display:block}}
+/* End */
+
+
+/* Start:/bitrix/templates/aspro-allcorp2/components/bitrix/news.list/catalog-sections-2/style.min.css?17182698161378*/
+@media (max-width:767px){.sections#compact-view-mobile-catalog-sections .items .item{padding:15px 30px 18px 64px!important;position:relative;border-bottom:none}.sections#compact-view-mobile-catalog-sections .items>div:last-of-type .item{border-bottom:1px solid #f2f2f2}.sections#compact-view-mobile-catalog-sections .items .item .image{display:flex;align-items:center;vertical-align:middle;width:41px;margin:0 0 0 12px;line-height:normal;float:none;position:absolute;left:0;top:0;bottom:0;height:auto;background:0 0}.sections#compact-view-mobile-catalog-sections .items .item.childs:after{content:' ';background-image:url(/bitrix/templates/aspro-allcorp2/components/bitrix/news.list/catalog-sections-2/../../../../images/svg/Triangle_right.svg);position:absolute;top:50%;margin:-14px 0 0 -15px;display:inline-block;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;vertical-align:middle;min-width:30px;min-height:30px;background-repeat:no-repeat;background-position:center center;right:5px}.sections#compact-view-mobile-catalog-sections .items .item .info{display:inline-block;padding:0;vertical-align:middle}.sections#compact-view-mobile-catalog-sections .items .item .info .text{display:none}.sections#compact-view-mobile-catalog-sections .items .item .info .title{margin:0}.sections#compact-view-mobile-catalog-sections .items .item .info .title a{font-size:1em;text-align:left;display:inline-block;margin-bottom:0}}
+/* End */
+/* /bitrix/templates/aspro-allcorp2/components/bitrix/news/catalog/style.min.css?1718269816394 */
+/* /bitrix/templates/aspro-allcorp2/components/bitrix/news.list/catalog-sections-2/style.min.css?17182698161378 */

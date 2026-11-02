@@ -1,0 +1,5 @@
+
+; /* Start:"a:4:{s:4:"full";s:99:"/bitrix/templates/aspro-allcorp2/components/bitrix/news.detail/services/script.min.js?1718269816665";s:6:"source";s:81:"/bitrix/templates/aspro-allcorp2/components/bitrix/news.detail/services/script.js";s:3:"min";s:0:"";s:3:"map";s:0:"";}"*/
+$(document).ready(function(){$(".detail .galery-block .flexslider .item").length&&($(".detail .galery-block .flexslider .item").sliceHeight({lineheight:-3}),$(".detail .galery #carousel").length&&$(".detail .galery #carousel").flexslider({animation:"slide",controlNav:!1,animationLoop:!0,slideshow:!1,itemWidth:77,itemMargin:7.5,minItems:2,maxItems:4,asNavFor:".detail .galery #slider"})),$(".docs-block .blocks").length&&$(".docs-block .blocks .inner-wrapper").sliceHeight({row:".blocks",item:".inner-wrapper"}),$(".projects.item-views").length&&($(".projects.item-views .item .image").sliceHeight({lineheight:-3}),$(".projects.item-views .item").sliceHeight())});
+/* End */
+;; /* /bitrix/templates/aspro-allcorp2/components/bitrix/news.detail/services/script.min.js?1718269816665*/
