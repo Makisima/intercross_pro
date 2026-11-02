@@ -10,8 +10,9 @@ eleventyComputed:
   description: "{% if category.description %}{{ category.description }}{% else %}{{ category.title }} — продукция АО «Интеркросс»{% endif %}"
 ---
 {% set ancestors = catalog | ancestorsOf(category) %}
-{% set children = catalog | childrenOf(category.id) %}
+{% set children  = catalog | childrenOf(category.id) %}
 {% set isProduct = category.kind === "product" %}
+{% set PLACEHOLDER = '/bitrix/templates/aspro-allcorp2/images/noimage_sections.png' %}
 
 <div class="body">
 	<div class="body_media"></div>
@@ -40,9 +41,7 @@ eleventyComputed:
 								{% for item in catalog %}
 									{% if item.parent_id == null %}
 										{% set isActive = (category.id == item.id) or (ancestors | length and ancestors[0].id == item.id) %}
-										<li class="{% if isActive %}active{% endif %}">
-											<a href="/product/{{ item.path }}/">{{ item.title }}</a>
-										</li>
+										<li{% if isActive %} class="active"{% endif %}><a href="/product/{{ item.path }}/">{{ item.title }}</a></li>
 									{% endif %}
 								{% endfor %}
 							</ul>
@@ -56,6 +55,13 @@ eleventyComputed:
 
 					<!-- Контент (справа) -->
 					<div class="col-md-9 col-sm-12 col-xs-12 content-md">
+
+						{# ===== ОПИСАНИЕ КАТЕГОРИИ/ТОВАРА (если есть) ===== #}
+						{% if category.description %}
+							<div class="text_block" style="margin: 20px 0 30px; font-size: 16px; line-height: 1.7; color: #333;">
+								<p>{{ category.description }}</p>
+							</div>
+						{% endif %}
 
 						{% if isProduct %}
 							{# ===== ТОВАР ===== #}
@@ -76,7 +82,7 @@ eleventyComputed:
 											<div class="item slice-item left" style="margin-bottom: 30px; border: 1px solid #eee; padding: 15px; border-radius: 4px;">
 												<div class="image" style="text-align: center; min-height: 150px; display: flex; align-items: center; justify-content: center;">
 													<a href="/product/{{ item.path }}/">
-														<img src="{{ item.image | default('/bitrix/templates/aspro-allcorp2/images/noimage_sections.png') }}" alt="{{ item.title }}" class="img-responsive" style="max-height: 150px; object-fit: contain;" />
+														<img src="{{ item.image or PLACEHOLDER }}" alt="{{ item.title }}" class="img-responsive" style="max-height: 150px; object-fit: contain;" />
 													</a>
 												</div>
 												<div class="info" style="margin-top: 15px; text-align: center;">
@@ -89,7 +95,7 @@ eleventyComputed:
 										{% endfor %}
 									</div>
 								</div>
-							{% else %}
+							{% elif not category.description %}
 								<p style="color: #666;">В этой категории пока нет товаров.</p>
 							{% endif %}
 						{% endif %}
