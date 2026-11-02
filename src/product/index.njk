@@ -1,0 +1,51 @@
+---
+layout: layout.njk
+title: "Каталог продукции — АО «Интеркросс»"
+description: "Каталог продукции АО «Интеркросс»: 6 направлений, климатические шкафы, кроссовое оборудование, ЦОД и другое."
+bodyClass: "header_nopacity header_fill_colored side_left all_title_2 mfixed_Y mfixed_view_always fill_bg_n mheader-v1 footer-v3 header-v1 title-v1 with_phones"
+---
+<div class="body">
+	<div class="body_media"></div>
+	<div role="main" class="main banner-auto">
+		<div class="container">
+			<div class="maxwidth-theme">
+				<div class="breadcrumbs">
+					<ul class="breadcrumb">
+						<li><a href="/">Главная</a></li>
+						<li><span>Продукция</span></li>
+					</ul>
+				</div>
+
+				<h1 id="pagetitle">Каталог продукции</h1>
+
+				<div class="text_block" style="margin-top: 20px; margin-bottom: 30px;">
+					<p>Мы воплощаем системные решения в области эффективного контроля и управления процессами, обработки данных, а также технологии умных вещей. Мы работаем с государственными и коммерческими организациями, крупными тендерами и индивидуальными предпринимателями.</p>
+				</div>
+
+				<div class="list items catalog_section_list">
+					<div class="row margin0 flexbox">
+						{% for item in catalog %}
+							{% if item.parent_id == null %}
+								<div class="col-md-3 col-sm-4 col-xs-12" style="margin-bottom: 30px;">
+									<div class="item section_item front-section-only">
+										<div class="section_item_inner">
+											<div class="img shine">
+												<a href="/product/{{ item.slug }}/" class="thumb">
+													<img src="{{ item.image }}" alt="{{ item.title }}" />
+												</a>
+											</div>
+											<div class="name">
+												<a href="/product/{{ item.slug }}/" class="dark_link">{{ item.title }}</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							{% endif %}
+						{% endfor %}
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
