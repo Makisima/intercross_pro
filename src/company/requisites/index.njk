@@ -1,14 +1,69 @@
 ---
 layout: layout.njk
 title: "Реквизиты — АО «Интеркросс»"
-description: "Юридические реквизиты АО «Интеркросс» для оформления договоров."
+description: "Юридические и банковские реквизиты АО «Интеркросс» для оформления договоров."
 bodyClass: "header_nopacity header_fill_colored side_left all_title_2 mfixed_Y mfixed_view_always fill_bg_n mheader-v1 footer-v3 header-v1 title-v1 with_phones"
 ---
+<style>
+	.requisites-table {
+		width: 100%;
+		border-collapse: collapse;
+		margin-top: 20px;
+		font-size: 15px;
+	}
+	.requisites-table tr {
+		border-bottom: 1px solid #eee;
+	}
+	.requisites-table tr:nth-child(odd) {
+		background: #f9f9f9;
+	}
+	.requisites-table tr:hover {
+		background: #f0f6fd;
+	}
+	.requisites-table td {
+		padding: 14px 16px;
+		vertical-align: top;
+		line-height: 1.6;
+	}
+	.requisites-table td:first-child {
+		width: 33%;
+		font-weight: 600;
+		color: #222;
+	}
+	.requisites-table td:last-child {
+		color: #444;
+	}
+	.requisites-table a {
+		color: #034EA2;
+		text-decoration: none;
+	}
+	.requisites-table a:hover {
+		text-decoration: underline;
+	}
+	@media (max-width: 600px) {
+		.requisites-table td {
+			display: block;
+			width: 100%;
+			padding: 10px 12px;
+		}
+		.requisites-table td:first-child {
+			border-bottom: none;
+			padding-bottom: 0;
+			color: #666;
+			font-size: 13px;
+		}
+		.requisites-table td:last-child {
+			padding-top: 4px;
+		}
+	}
+</style>
+
 <div class="body">
 	<div class="body_media"></div>
 	<div role="main" class="main banner-auto">
 		<div class="container">
 			<div class="maxwidth-theme">
+				
 				<div class="breadcrumbs">
 					<ul class="breadcrumb">
 						<li><a href="/">Главная</a></li>
@@ -16,9 +71,90 @@ bodyClass: "header_nopacity header_fill_colored side_left all_title_2 mfixed_Y m
 						<li><span>Реквизиты</span></li>
 					</ul>
 				</div>
-				<h1 id="pagetitle">История</h1>
-				<div class="text_block" style="margin-top: 20px;">
-					<p>Информация находится в разработке.</p>
+				
+				<h1 id="pagetitle">Реквизиты</h1>
+
+				<div class="row">
+					<!-- Боковое меню (слева) -->
+					<div class="col-md-3 col-sm-12 col-xs-12">
+						<aside class="sidebar">
+							<ul class="nav nav-list side-menu">
+								<li><a href="/company/">О компании</a></li>
+								<li><a href="/company/missiya-tseli/">Миссия. Цели</a></li>
+								<li><a href="/company/history/">История</a></li>
+								<li><a href="/company/partners/">Партнеры</a></li>
+								<li><a href="/company/licenses/">Сертификаты качества</a></li>
+								<li><a href="/company/staff/">Руководство</a></li>
+								<li><a href="/company/vacancy/">Вакансии</a></li>
+								<li class="active"><a href="/company/requisites/">Реквизиты</a></li>
+							</ul>
+						</aside>
+						<div class="sidearea">
+							<div class="include" style="padding: 20px 10px 0 20px; color: #666666;">
+								Находим решения для любой задачи.<br>
+								Просто расскажите нам о ней!
+							</div>
+						</div>
+					</div>
+
+					<!-- Основной контент (справа) -->
+					<div class="col-md-9 col-sm-12 col-xs-12 content-md">
+						
+						<div class="text_block" style="margin-top: 20px; margin-bottom: 20px;">
+							<p>Ниже приведены реквизиты компании. В случае необходимости получения дополнительных документов (свидетельства о государственной регистрации, идентификационного номера налогоплательщика) вы можете обратиться в бухгалтерию предприятия.</p>
+						</div>
+
+						<table class="requisites-table">
+							<tbody>
+								<tr>
+									<td>Полное наименование:</td>
+									<td>Акционерное общество «Интеркросс»</td>
+								</tr>
+								<tr>
+									<td>Сокращенное наименование:</td>
+									<td>АО «Интеркросс»</td>
+								</tr>
+								<tr>
+									<td>ИНН/КПП:</td>
+									<td>6229064887 / 622901001</td>
+								</tr>
+								<tr>
+									<td>ОГРН:</td>
+									<td>1086230004816</td>
+								</tr>
+								<tr>
+									<td>Юридический адрес:</td>
+									<td>390043, г. Рязань, проезд Шабулина, д. 2В</td>
+								</tr>
+								<tr>
+									<td>Фактический адрес:</td>
+									<td>390043, г. Рязань, проезд Шабулина, д. 2В</td>
+								</tr>
+								<tr>
+									<td>Телефон, факс:</td>
+									<td><a href="tel:+74912222202">+7 (4912) 22-22-02</a></td>
+								</tr>
+								<tr>
+									<td>Электронная почта:</td>
+									<td><a href="mailto:sales@interkross.ru">sales@interkross.ru</a></td>
+								</tr>
+								<tr>
+									<td>Сайт:</td>
+									<td><a href="https://interkross.ru" target="_blank" rel="noopener">https://interkross.ru</a></td>
+								</tr>
+								<tr>
+									<td>Банковские реквизиты:</td>
+									<td>
+										БИК 044525974<br>
+										Р/с № 40702810610001390859 в АО «ТБанк»<br>
+										Кор/счет 30101810145250000974
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+					</div>
+					
 				</div>
 			</div>
 		</div>
