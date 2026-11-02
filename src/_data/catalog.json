@@ -8,7 +8,7 @@
     "title": "Автодорожное направление",
     "kind": "category",
     "direction": "avtodor",
-    "image": null,
+    "image": "/upload/iblock/eef/r1hcii6sh7a406crh2up1d09q7gop51p.png",
     "description": null
   },
   {
@@ -80,7 +80,7 @@
     "title": "Электротехническое направление",
     "kind": "category",
     "direction": "elektrotekh",
-    "image": null,
+    "image": "/upload/iblock/6bc/8zgk7e98gb4uv20xjb4hgabf0thgk6dn.png",
     "description": null
   },
   {
@@ -152,7 +152,7 @@
     "title": "Горнорудное направление",
     "kind": "category",
     "direction": "gornorud",
-    "image": null,
+    "image": "/upload/iblock/4c6/bz0ftplqhsmaod3amzj8awly5d9vugtx.png",
     "description": null
   },
   {
@@ -212,7 +212,7 @@
     "title": "Нефтегазовое направление",
     "kind": "category",
     "direction": "neftegaz",
-    "image": null,
+    "image": "/upload/iblock/d40/3e1hl8zoy2dol13wn8ahxd29c36qk90e.png",
     "description": null
   },
   {
@@ -272,7 +272,7 @@
     "title": "Телекомуникационное направление",
     "kind": "category",
     "direction": "telecom",
-    "image": null,
+    "image": "/upload/iblock/ee1/j1n7c0foamovqcmanfy0dgzoeiu8x3jd.png",
     "description": null
   },
   {
@@ -305,7 +305,7 @@
     "path": "telekomunikatsionnoe-napravlenie/krossovoe-oborudovanie/analogovyy-kross/armatura-i-gorizontalnye-boksy-dlya-ustanovki-v-19-shkaf",
     "parent_id": "telekomunikatsionnoe-napravlenie__krossovoe-oborudovanie__analogovyy-kross",
     "level": 4,
-    "title": "Арматура и горизонтальные боксы для установки в 19&quot; шкаф",
+    "title": "Арматура и горизонтальные боксы для установки в 19\" шкаф",
     "kind": "category",
     "direction": "telecom",
     "image": null,
@@ -634,8 +634,8 @@
     "title": "Оптические коробки",
     "kind": "category",
     "direction": "telecom",
-    "image": null,
-    "description": null
+    "image": "/upload/iblock/535/zkyd7pwm3nceh4pwjy2ej1zptmssu831.png",
+    "description": "Компания «Интекросс» представляет оптические распределительные коробки (ОРК) — инновационное решение для организации сетей связи. Эти устройства обеспечивают эффективную передачу данных и качественное подключение абонентов к оптическим сетям."
   },
   {
     "id": "telekomunikatsionnoe-napravlenie__opticheskie-korobki__korobki-raspredelitelnye-metallicheskie-dlya-neotaplivaemykh-pomeshcheniy-s-zamkom",
@@ -670,8 +670,8 @@
     "title": "Шкафы FTTB",
     "kind": "category",
     "direction": "telecom",
-    "image": null,
-    "description": null
+    "image": "/upload/iblock/f86/6x1pw8mm84k989breqlawr97nccs8vnx.jpg",
+    "description": "Компания «Интеркросс» сообщает о расширении производства шкафов FTTB в связи с растущим спросом на продукцию FTTB (Fiber to the Building) — технологию использования оптического кабеля вместо медных проводов."
   },
   {
     "id": "telekomunikatsionnoe-napravlenie__shkafy-opticheskie-raspredelitelnye",
@@ -682,8 +682,8 @@
     "title": "Шкафы оптические распределительные",
     "kind": "category",
     "direction": "telecom",
-    "image": null,
-    "description": null
+    "image": "/upload/iblock/a67/d6bdd8g47dvus5ijgk3y4e957licbo48.jpg",
+    "description": "Оптические распределительные шкафы от «Интеркросс» — это идеальное решение для создания современных и надежных волоконно-оптических сетей. Они обеспечивают высокую производительность, простоту установки и эксплуатации, а также соответствие всем стандартам качества."
   },
   {
     "id": "telekomunikatsionnoe-napravlenie__shkafy-opticheskie-raspredelitelnye__dopolnitelnaya-komplektatsiya-dlya-shkafov-ulichnykh",
@@ -742,8 +742,8 @@
     "title": "Телекоммуникационные климатические шкафы",
     "kind": "category",
     "direction": "telecom",
-    "image": null,
-    "description": null
+    "image": "/upload/iblock/fed/3gavvt4ojxama7u3avn9qk0agxxyyaz3.jpeg",
+    "description": "Одним из ведущих направлений компании «Интеркросс» является производство климатических уличных антивандальных шкафов. Они предназначены для размещения компьютерного, сетевого и коммуникационного оборудования, систем электропитания и аккумуляторных батарей на открытых площадках."
   },
   {
     "id": "telekomunikatsionnoe-napravlenie__telekommunikatsionnye-klimaticheskie-shkafy__shkaf-klimaticheskiy-1024x740x662",
@@ -806,7 +806,7 @@
     "title": "Шкаф климатический 1800x850x780",
     "kind": "product",
     "direction": "telecom",
-    "image": null,
+    "image": "/upload/iblock/be6/avrinf5simzk4rbos3cfulobhl562tmr.png",
     "description": null,
     "specs_html": "<table> <tr> <td> <span>Высота, мм</span> </td> <td> <span> 1800 </span> </td> </tr> <tr> <td> <span>Ширина, мм</span> </td> <td> <span> 850 </span> </td> </tr> <tr> <td> <span>Глубина, мм</span> </td> <td> <span> 780 </span> </td> </tr> <tr> <td> <span>Тип</span> </td> <td> <span> напольный </span> </td> </tr> <tr> <td> <span>Кол-во секций</span> </td> <td> <span> 1 </span> </td> </tr> <tr> <td> <span>Датчики</span> </td> <td> <span> дыма&nbsp;/ удара&nbsp;/ открывания двери&nbsp;/ температуры&nbsp;/ затопления </span> </td> </tr> <tr> <td> <span>Наличие ЭПУ</span> </td> <td> <span> Да </span> </td> </tr> <tr> <td> <span>Размеры под оборудование, U</span> </td> <td> <span> 27 </span> </td> </tr> <tr> <td> <span>Система поддержания микроклимата внутри</span> </td> <td> <span> кондиционер </span> </td> </tr> </table>"
   },
@@ -975,7 +975,7 @@
     "title": "Центр обработки данных",
     "kind": "category",
     "direction": "tsod",
-    "image": null,
+    "image": "/upload/iblock/fe1/bqsm1p2rcyyjnf4icb7uxvivaf8g5bco.png",
     "description": null
   },
   {
