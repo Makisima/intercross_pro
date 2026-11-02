@@ -7,6 +7,7 @@ pagination:
 permalink: "/product/{{ category.path }}/index.html"
 eleventyComputed:
   title: "{{ category.title }} — АО «Интеркросс»"
+  description: "{% if category.description %}{{ category.description }}{% else %}{{ category.title }} — продукция АО «Интеркросс»{% endif %}"
 ---
 {% set ancestors = catalog | ancestorsOf(category) %}
 {% set children = catalog | childrenOf(category.id) %}
