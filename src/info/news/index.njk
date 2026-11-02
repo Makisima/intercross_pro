@@ -19,8 +19,33 @@ bodyClass: "header_nopacity header_fill_colored side_left all_title_2 mfixed_Y m
 
 				<h1 id="pagetitle">Новости</h1>
 
-				<div class="text_block" style="margin-top: 20px;">
-					<p>Раздел находится в разработке. Скоро здесь появятся актуальные новости нашей компании.</p>
+				<div class="row">
+					{% for n in news %}
+					<div class="col-md-4 col-sm-6">
+						<div class="item shadow slice-item wdate">
+							<div class="image shine">
+								<a href="/info/news/{{ n.slug }}/">
+									{% if n.image %}
+									<img src="{{ n.image }}" alt="{{ n.title }}" title="{{ n.title }}" class="img-responsive" />
+									{% else %}
+									<img src="/bitrix/templates/aspro-allcorp2/images/noimage_sections.png" alt="{{ n.title }}" class="img-responsive" />
+									{% endif %}
+								</a>
+							</div>
+							<div class="body-info">
+								<div class="sticker-block">Компания</div>
+								<div class="title">
+									<a href="/info/news/{{ n.slug }}/" class="dark-color">{{ n.title }}</a>
+								</div>
+								{% if n.date %}
+								<div class="period">
+									<span class="date">{{ n.date }}</span>
+								</div>
+								{% endif %}
+							</div>
+						</div>
+					</div>
+					{% endfor %}
 				</div>
 
 			</div>

@@ -1,0 +1,60 @@
+---
+layout: layout.njk
+pagination:
+  data: news
+  size: 1
+  alias: article
+permalink: "/info/news/{{ article.slug }}/index.html"
+eleventyComputed:
+  title: "{{ article.title }} — АО «Интеркросс»"
+  description: "{{ article.description }}"
+bodyClass: "header_nopacity header_fill_colored side_left all_title_2 mfixed_Y mfixed_view_always fill_bg_n mheader-v1 footer-v3 header-v1 title-v1 with_phones"
+---
+<div class="body">
+	<div class="body_media"></div>
+	<div role="main" class="main banner-auto">
+		<div class="container">
+			<div class="maxwidth-theme">
+
+				<div class="breadcrumbs">
+					<ul class="breadcrumb">
+						<li><a href="/">Главная</a></li>
+						<li><a href="/info/news/">Новости</a></li>
+						<li><span>{{ article.title }}</span></li>
+					</ul>
+				</div>
+
+				<h1 id="pagetitle">{{ article.title }}</h1>
+
+				{% if article.image %}
+				<div class="detailimage image-head">
+					<img src="{{ article.image }}" class="img-responsive" title="{{ article.title }}" alt="{{ article.title }}" />
+				</div>
+				{% endif %}
+
+				<div class="detail news fixed_wrapper">
+					{% if article.intro %}
+					<div class="introtext">
+						{{ article.intro | safe }}
+					</div>
+					{% endif %}
+
+					{% if article.date %}
+					<div class="period">
+						<span class="date">{{ article.date }}</span>
+					</div>
+					{% endif %}
+
+					<div class="content">
+						{{ article.content | safe }}
+					</div>
+
+					<div class="order_block" style="margin-top: 30px; text-align: center;">
+						<a href="/info/news/" class="btn btn-default">← Все новости</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>

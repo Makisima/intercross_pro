@@ -1,0 +1,107 @@
+---
+layout: layout.njk
+pagination:
+  data: catalog
+  size: 1
+  alias: category
+permalink: "/product/{{ category.slug }}/index.html"
+---
+{% set ancestors = catalog | ancestorsOf(category) %}
+{% set children = catalog | childrenOf(category.id) %}
+
+<div class="body">
+	<div class="body_media"></div>
+	<div role="main" class="main banner-auto">
+		<div class="container">
+			<div class="maxwidth-theme">
+				
+				<div class="breadcrumbs">
+					<ul class="breadcrumb">
+						<li><a href="/">Главная</a></li>
+						<li><a href="/product/">Продукты</a></li>
+						{% for node in ancestors %}
+							<li><a href="/product/{{ node.slug }}/">{{ node.title }}</a></li>
+						{% endfor %}
+						<li><span>{{ category.title }}</span></li>
+					</ul>
+				</div>
+
+				<h1 id="pagetitle">{{ category.title }}</h1>
+
+				<div class="row">
+					<!-- Боковое меню (слева) -->
+					<div class="col-md-3 col-sm-12 col-xs-12">
+						<aside class="sidebar">
+							<ul class="nav nav-list side-menu">
+								{% for item in catalog %}
+									{% if item.parent_id == null %}
+										{% set isActive = (category.id == item.id) or (ancestors | length and ancestors[0].id == item.id) %}
+										<li class="{% if isActive %}active{% endif %} {% if isActive and children | length %}child{% endif %}">
+											<a href="/product/{{ item.slug }}/">{{ item.title }}</a>
+											{% if isActive and children | length %}
+												<div class="submenu-wrapper">
+													<ul class="submenu">
+														{% for child in children %}
+															<li class="{% if child.id == category.id %}active{% endif %}">
+																<a href="/product/{{ child.slug }}/">{{ child.title }}</a>
+															</li>
+														{% endfor %}
+													</ul>
+												</div>
+											{% endif %}
+										</li>
+									{% endif %}
+								{% endfor %}
+							</ul>
+						</aside>
+						<div class="sidearea">
+							<div class="include" style="padding: 20px 10px 0 20px; color: #666666;">
+								Цель нашей компании — <br> предложение широкого ассортимента товаров и услуг на постоянно высоком качестве обслуживания.
+							</div>
+						</div>
+					</div>
+
+					<!-- Контент (справа) -->
+					<div class="col-md-9 col-sm-12 col-xs-12 content-md">
+						
+						{% if category.description %}
+						<div class="text_block" style="margin-top: 20px; margin-bottom: 30px;">
+							<p>{{ category.description }}</p>
+						</div>
+						{% endif %}
+
+						{% if children | length %}
+						<div class="item-views catalog sections">
+							<div class="items row margin0 row_block flexbox nmac">
+								{% for item in children %}
+								<div class="col-md-6 col-sm-12 col-xs-12">
+									<div class="item slice-item left" style="margin-bottom: 30px; border: 1px solid #eee; padding: 15px; border-radius: 4px;">
+										<div class="image" style="text-align: center; min-height: 150px; display: flex; align-items: center; justify-content: center;">
+											<a href="/product/{{ item.slug }}/">
+												<!-- Если картинки нет, используется заглушка Aspro -->
+												<img src="{{ item.image | default('/bitrix/templates/aspro-allcorp2/images/noimage_sections.png') }}" alt="{{ item.title }}" class="img-responsive" style="max-height: 150px; object-fit: contain;" />
+											</a>
+										</div>
+										<div class="info" style="margin-top: 15px; text-align: center;">
+											<div class="title">
+												<a href="/product/{{ item.slug }}/" class="dark-color" style="font-size: 16px; font-weight: 500; line-height: 1.4;">{{ item.title }}</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								{% endfor %}
+							</div>
+						</div>
+						{% endif %}
+
+						<div class="order_block" style="margin-top: 20px; text-align: center;">
+							<a href="/contacts/" class="btn btn-default">Заказать</a>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
