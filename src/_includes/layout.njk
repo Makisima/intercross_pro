@@ -392,5 +392,86 @@
 	</div>
 </footer>
 
+
+<style>
+/* мобильное меню — изолированный блок, не пересекается с критическим <style> в <head> */
+@media (max-width: 991px) {
+	#mobilemenu {
+		display: none;
+		position: fixed;
+		top: 0; left: 0; right: 0; bottom: 0;
+		background: #fff;
+		z-index: 10000;
+		overflow-y: auto;
+		padding: 20px;
+	}
+	#mobilemenu.opened { display: block; }
+	#mobilemenu .mm-close {
+		font-size: 28px; line-height: 1; background: none; border: 0;
+		float: right; cursor: pointer; color: #034EA2; padding: 4px 10px;
+	}
+	#mobilemenu h4 { margin: 20px 0 10px; color: #034EA2; font-size: 16px; }
+	#mobilemenu ul { list-style: none; padding: 0; margin: 0 0 15px; }
+	#mobilemenu ul li { border-bottom: 1px solid #eee; }
+	#mobilemenu ul li a { display: block; padding: 12px 5px; color: #222; text-decoration: none; font-size: 15px; }
+	#mobilemenu ul li a:hover { color: #034EA2; }
+}
+</style>
+
+<div id="mobilemenu" class="visible-xs visible-sm">
+	<button class="mm-close" aria-label="Закрыть">×</button>
+	<h4>Компания</h4>
+	<ul>
+		<li><a href="/company/">О компании</a></li>
+		<li><a href="/company/missiya-tseli/">Миссия. Цели</a></li>
+		<li><a href="/company/history/">История</a></li>
+		<li><a href="/company/partners/">Партнеры</a></li>
+		<li><a href="/company/licenses/">Сертификаты</a></li>
+		<li><a href="/company/staff/">Руководство</a></li>
+		<li><a href="/company/vacancy/">Вакансии</a></li>
+		<li><a href="/company/requisites/">Реквизиты</a></li>
+	</ul>
+	<h4>Продукция</h4>
+	<ul>
+		<li><a href="/product/">Весь каталог</a></li>
+		<li><a href="/product/avtodorozhnoe-napravlenie/">Автодорожное</a></li>
+		<li><a href="/product/gornorudnoe-napravlenie/">Горнорудное</a></li>
+		<li><a href="/product/neftegazovoe-napravlenie/">Нефтегазовое</a></li>
+		<li><a href="/product/telekomunikatsionnoe-napravlenie/">Телекоммуникационное</a></li>
+		<li><a href="/product/elektrotekhnicheskoe-napravlenie/">Электротехническое</a></li>
+		<li><a href="/product/tsentr-obrabotki-dannykh/">ЦОД</a></li>
+	</ul>
+	<h4>Производство</h4>
+	<ul>
+		<li><a href="/services/">Все услуги</a></li>
+		<li><a href="/services/instrumentalnoe-proizvodstvo/">Инструментальное</a></li>
+		<li><a href="/services/mekhanicheskoe-proizvodstvo/">Механическое</a></li>
+		<li><a href="/services/sborochnoe-proizvodstvo/">Сборочное</a></li>
+		<li><a href="/services/proizvodstvo-galvano-poroshkovykh-pokrytiy/">Гальвано-порошковые</a></li>
+	</ul>
+	<h4>Информация</h4>
+	<ul>
+		<li><a href="/info/news/">Новости</a></li>
+		<li><a href="/info/dostavka-i-oplata/">Доставка и оплата</a></li>
+		<li><a href="/contacts/">Контакты</a></li>
+		<li><a href="/include/licenses_detail/">Политика конфиденциальности</a></li>
+	</ul>
+</div>
+
+<script>
+(function(){
+	var burger = document.querySelector('#mobileheader .burger');
+	var menu   = document.getElementById('mobilemenu');
+	if (!burger || !menu) return;
+	var close  = menu.querySelector('.mm-close');
+
+	function open(){ menu.classList.add('opened'); document.body.style.overflow = 'hidden'; }
+	function shut(){ menu.classList.remove('opened'); document.body.style.overflow = ''; }
+
+	burger.addEventListener('click', open);
+	if (close) close.addEventListener('click', shut);
+	menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', shut); });
+})();
+</script>
 </body>
 </html>
