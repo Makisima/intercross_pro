@@ -4,3 +4,5 @@ dist/
 Thumbs.db
 .11ty/
 news_raw.json
+tmp/
+РОЛЬ.txt
